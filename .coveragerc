@@ -1,0 +1,5 @@
+[run]
+include = your_snippets/*
+omit = *migrations*, *tests*
+plugins =
+    django_coverage_plugin
