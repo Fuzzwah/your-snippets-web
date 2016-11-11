@@ -1,6 +1,9 @@
 # don't update our settings files!
 config/settings/
 
+# this isn't public
+gunicorn_start
+
 ### OSX ###
 .DS_Store
 .AppleDouble

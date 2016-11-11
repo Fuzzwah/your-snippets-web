@@ -252,5 +252,3 @@ ADMIN_URL = r'^admin/'
 
 # Your common stuff: Below this line define 3rd party library settings
 # ------------------------------------------------------------------------------
-
-env.read_env(ROOT_DIR('config/settings/.env'))
