@@ -1,7 +1,7 @@
 from django.conf.urls import url
 from rest_framework.urlpatterns import format_suffix_patterns
 from rest_framework.authtoken import views as token_views
-from api import views
+from your_snippets.api import views
 
 
 urlpatterns = [

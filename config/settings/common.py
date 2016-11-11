@@ -49,7 +49,7 @@ LOCAL_APPS = (
     # custom users app
     'your_snippets.users.apps.UsersConfig',
     # Your stuff: custom apps go here
-    'snippets',
+    'api',
     'rss',
 )
 
