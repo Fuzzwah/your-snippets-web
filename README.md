@@ -23,9 +23,17 @@ A place to collect snippets and images from the web.
   * `sudo su - postgres`
   * `psql`
   * `CREATE DATABASE your_snippets;`
-  # `CREATE ROLE your_snippets_user WITH LOGIN ENCRYPTED PASSWORD '<a good password goes here>' CREATEDB;`
+  * `CREATE ROLE your_snippets_user WITH LOGIN ENCRYPTED PASSWORD '<a good password goes here>' CREATEDB;`
   * `GRANT ALL PRIVILEGES ON DATABASE your_snippets TO your_snippets_user;`
   * `\q`
   * `exit`
-* Update the DATABASE CONFIGURATION section of your `settings/common.py` file
-  * ie: `'default': env.db('DATABASE_URL', default='postgres://your_snippets_user:<your good password>@localhost:5432/your_snippets')`
+* Copy the example environment file into the required location: `cp env.example config/settings/.env`
+* Edit this file and configure your database connection string.
+  * ie: `DATABASE_URL=postgres://postgresuser:mysecretpass@localhost:5432/your_snippets
+`
+* Set up django database schema: `python manage.py migrate`
+* Create your superuser: `python manage.py createsuperuser`
+* Collect up the static files: `python manage.py collectstatic`
+* Set up gunicorn and nginx: [follow this guide](https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-centos-7#create-a-gunicorn-systemd-service-file) and alter details and locations as required.
+* Create a gunicorn_start bash script which includes the exporting of your various config requirements, such as database details
+

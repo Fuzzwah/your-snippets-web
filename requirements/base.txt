@@ -44,4 +44,5 @@ redis>=2.10.5
 
 
 # Your custom requirements go here
-gunicorn
+djangorestframework
+markdown

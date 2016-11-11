@@ -1,3 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
+from your_snippets.api.models import Snippet, Tag, SavedImage
+
+
+admin.site.register(Snippet)
+admin.site.register(Tag)
+admin.site.register(SavedImage)
