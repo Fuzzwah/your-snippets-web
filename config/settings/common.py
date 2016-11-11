@@ -49,8 +49,8 @@ LOCAL_APPS = (
     # custom users app
     'your_snippets.users.apps.UsersConfig',
     # Your stuff: custom apps go here
-    'api',
-    'rss',
+    'your_snippets.api',
+    'your_snippets.rss',
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
