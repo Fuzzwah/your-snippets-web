@@ -23,8 +23,7 @@ A place to collect snippets and images from the web.
   * `sudo su - postgres`
   * `psql`
   * `CREATE DATABASE your_snippets;`
-  * `CREATE ROLE your_snippets_user;`
-  * `ALTER USER your_snippets_user WITH PASSWORD '<a good password goes here>';`
+  # `CREATE ROLE your_snippets_user WITH LOGIN ENCRYPTED PASSWORD '<a good password goes here>' CREATEDB;`
   * `GRANT ALL PRIVILEGES ON DATABASE your_snippets TO your_snippets_user;`
   * `\q`
   * `exit`
