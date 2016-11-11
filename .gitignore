@@ -1,3 +1,6 @@
+# don't update our settings files!
+config/settings/
+
 ### OSX ###
 .DS_Store
 .AppleDouble
