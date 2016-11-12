@@ -6,7 +6,7 @@ from your_snippets.api import views
 
 
 urlpatterns = [
-    url(r'^/$', views.snippet_list),
+    url(r'^list/$', views.snippet_list),
     url(r'^auth/$', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^admin/', admin.site.urls),
     url(r'^add/$', views.snippet_add),
