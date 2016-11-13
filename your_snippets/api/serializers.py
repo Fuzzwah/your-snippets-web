@@ -91,7 +91,7 @@ class ImageSerializer(serializers.HyperlinkedModelSerializer):
 
 class ImageCreateSerializer(serializers.ModelSerializer):
     images = ImageSerializer(many=True)
-    url = serializers.CharField(max_length=255)
+    url = serializers.CharField(max_length=255, read_only=True)
 
     def create(self, validated_data):
         images_data = validated_data.pop('images')
