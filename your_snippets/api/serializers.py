@@ -105,7 +105,8 @@ class ImageCreateSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = SavedImage
-        fields = ('images', 'url',)
+        fields = ('images',)
+        read_only_fields = ('url',)
 
 
 class SnippetCreateSerializer(serializers.ModelSerializer):
