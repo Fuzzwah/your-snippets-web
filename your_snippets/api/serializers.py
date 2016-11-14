@@ -93,6 +93,9 @@ class ImageCreateSerializer(serializers.ModelSerializer):
     images = ImageSerializer(many=True)
     url = serializers.CharField(max_length=255, read_only=True)
 
+    def validate(self, data):
+        return data
+
     def create(self, validated_data):
         images_data = validated_data.pop('images')
         url = validated_data.get('url')
