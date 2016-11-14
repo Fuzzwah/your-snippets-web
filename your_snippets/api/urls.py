@@ -10,7 +10,7 @@ urlpatterns = [
     url(r'^auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^admin/', admin.site.urls),
     url(r'^add/', views.snippet_add),
-    url(r'^add/images/', views.images_add),
+    #url(r'^add/images/', views.images_add),
     url(r'^snippet/(?P<pk>[0-9]+)/$', views.snippet_detail),
     url(r'^token/', token_views.obtain_auth_token),
 ]
