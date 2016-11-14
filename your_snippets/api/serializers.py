@@ -91,7 +91,7 @@ class ImageSerializer(serializers.HyperlinkedModelSerializer):
 
 class ImageCreateSerializer(serializers.ModelSerializer):
     images = ImageSerializer(many=True)
-    url = serializers.CharField(max_length=255)
+    url = serializers.CharField(max_length=255, read_only=True)
 
     def validate_url(self, value):
         print(value)
@@ -110,8 +110,7 @@ class ImageCreateSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = SavedImage
-        fields = ('images',)
-        read_only_fields = ('url',)
+        fields = ('images', 'url',)
 
 
 class SnippetCreateSerializer(serializers.ModelSerializer):
