@@ -94,6 +94,7 @@ class ImageCreateSerializer(serializers.ModelSerializer):
     url = serializers.CharField(max_length=255)
 
     def validate_url(self, value):
+        print(value)
         return value
 
     def create(self, validated_data):
