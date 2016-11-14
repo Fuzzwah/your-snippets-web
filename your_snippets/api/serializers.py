@@ -127,7 +127,8 @@ class SnippetCreateSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Snippet
-        fields = ('created', 'title', 'url', 'content', 'tags', 'images')
+        fields = ('title', 'url', 'content', 'tags', 'images')
+        #fields = ('created', 'title', 'url', 'content', 'tags', 'images')
 
 
 class APIImageSerializer(serializers.ModelSerializer):

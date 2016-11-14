@@ -21,8 +21,8 @@ class Tag(models.Model):
 
 
 class Snippet(models.Model):
-    #created = models.DateTimeField(auto_now=True)
-    created = models.DateTimeField()
+    created = models.DateTimeField(auto_now=True)
+    #created = models.DateTimeField()
     title = models.CharField(max_length=140, blank=False)
     url = models.CharField(max_length=255, primary_key=True)
     content = models.TextField(default='', blank=True)
