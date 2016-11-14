@@ -97,6 +97,7 @@ class ImageCreateSerializer(serializers.ModelSerializer):
         images_data = validated_data.pop('images')
         url = validated_data.get('url')
         snippet = Snippet.objects.get(url=url)
+        print(snippet)
 
         for image_data in images_data:
             SavedImage.objects.create(snippet=snippet, **image_data)
