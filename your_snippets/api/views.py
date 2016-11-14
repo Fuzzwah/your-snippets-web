@@ -33,8 +33,8 @@ def snippet_add(request, format=None):
 
 @api_view(['POST'])
 def images_add(request, format=None):
+    print("wtf")
     if request.method == 'POST':
-        print("wtf")
         print(request.data)
         serializer = ImageCreateSerializer(data=request.data)
         if serializer.is_valid():
