@@ -89,9 +89,12 @@ class ImageSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('image',)
 
 
-class ImageCreateSerializer(serializers.Serializer):
+class ImageCreateSerializer(serializers.ModelSerializer):
     images = ImageSerializer(many=True)
-    url = serializers.CharField(max_length=255, read_only=True)
+    url = serializers.CharField(max_length=255)
+
+    def validate_url(self, value):
+        return value
 
     def create(self, validated_data):
         images_data = validated_data.pop('images')
@@ -108,7 +111,6 @@ class ImageCreateSerializer(serializers.Serializer):
         model = SavedImage
         fields = ('images',)
         read_only_fields = ('url',)
-        extra_kwargs = {'url': {'validators': []},}
 
 
 class SnippetCreateSerializer(serializers.ModelSerializer):
