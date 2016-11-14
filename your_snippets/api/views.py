@@ -33,8 +33,14 @@ def snippet_add(request, format=None):
 
 @api_view(['POST'])
 def images_add(request, format=None):
-    print("wtf")
-
+    if request.method == 'POST':
+        serializer = ImageCreateSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    else:
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 @api_view(['GET', 'PUT', 'DELETE'])
 def snippet_detail(request, pk, format=None):
