@@ -93,13 +93,10 @@ class ImageCreateSerializer(serializers.ModelSerializer):
     images = ImageSerializer(many=True)
     url = serializers.CharField(max_length=255, read_only=True)
 
-    def validate_url(self, value):
-        print(value)
-        return value
-
     def create(self, validated_data):
         images_data = validated_data.pop('images')
         url = validated_data.get('url')
+        print(url)
         snippet = Snippet.objects.get(url=url)
         print(snippet)
 
