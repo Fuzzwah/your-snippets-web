@@ -7,7 +7,7 @@ from your_snippets.api import views
 
 urlpatterns = format_suffix_patterns([
     url(r'^list/$', views.snippet_list, name='snippet-list'),
-    url(r'^auth/$', include('rest_framework.urls', namespace='rest_framework')),
+    url(r'^auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^admin/', admin.site.urls, name='api-admin'),
     url(r'^add/images/$', views.images_add, name='add-image'),
     url(r'^add/$', views.snippet_add, name='add-snippet'),
