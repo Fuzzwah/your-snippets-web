@@ -107,6 +107,7 @@ class ImageCreateSerializer(serializers.ModelSerializer):
         model = SavedImage
         fields = ('images',)
         read_only_fields = ('url',)
+        extra_kwargs = {'url': {'validators': []},}
 
 
 class SnippetCreateSerializer(serializers.ModelSerializer):
