@@ -27,6 +27,7 @@ class Snippet(models.Model):
     url = models.CharField(max_length=255, primary_key=True)
     content = models.TextField(default='', blank=True)
     tags = models.CharField(max_length=140, blank=True)
+    public = models.BooleanField(default=True)
 
     def __str__(self):
         return self.title
