@@ -20,6 +20,17 @@ def snippet_list(request, format=None):
     else:
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+@api_view(['GET'])
+def tags_list(request, format=None):
+    """    List all tags
+    """
+    if request.method == 'GET':
+        tags = Tag.objects.all()
+        serializer = TagSerializer(tags, many=True)
+        return Response(serializer.data)
+    else:
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 @api_view(['POST'])
 def snippet_add(request, format=None):
     if request.method == 'POST':
