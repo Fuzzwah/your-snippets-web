@@ -8,7 +8,7 @@ class RSSFeed(Feed):
 
     def items(self):
         #return Snippet.objects.order_by('-created')
-        return Snippet.objects.order_by('-created')[:10]
+        return Snippet.objects.filter(public=True).order_by('-created')[:10]
 
     def item_title(self, item):
         return item.title
