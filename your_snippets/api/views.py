@@ -19,7 +19,7 @@ def snippet_list(request, format=None):
     """    List all snippets
     """
     if request.method == 'GET':
-        snippets = Snippet.objects.all()
+        snippets = Snippet.objects.filter(public=True)
         serializer = APIFullSerializer(snippets, many=True)
         return Response(serializer.data)
     else:
