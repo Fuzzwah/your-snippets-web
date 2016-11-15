@@ -3,7 +3,7 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
-from your_snippets.api.models import Snippet
+from your_snippets.api.models import Snippet, Tag, SavedImage
 from your_snippets.api.serializers import (
     APIFullSerializer, SnippetCreateSerializer, ImageCreateSerializer, SnippetSerializer, ImageSerializer
 )
