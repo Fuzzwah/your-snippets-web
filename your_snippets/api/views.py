@@ -5,7 +5,12 @@ from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from your_snippets.api.models import Snippet, Tag, SavedImage
 from your_snippets.api.serializers import (
-    APIFullSerializer, SnippetCreateSerializer, ImageCreateSerializer, SnippetSerializer, ImageSerializer
+    APIFullSerializer,
+    SnippetCreateSerializer,
+    ImageCreateSerializer,
+    SnippetSerializer,
+    ImageSerializer,
+    TagSerializer,
 )
 
 
