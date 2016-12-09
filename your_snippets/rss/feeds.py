@@ -18,7 +18,7 @@ class RSSFeed(Feed):
 
     def item_description(self, item):
         content = item.content.replace('\n', '<br />')
-        for img in item.images.all().order_by('-pk'):
+        for img in item.images.all().order_by('pk'):
             content = '{}<br /><br /><img src="https://snippets.fuzzyslogic.com{}">'.format(content, img.image.url)
         return content
 
