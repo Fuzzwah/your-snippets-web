@@ -22,9 +22,9 @@ class Base64ImageField(serializers.ImageField):
     def to_internal_value(self, data):
         # Check if this is a base64 string
         if isinstance(data, str):
-            pattern = re.compile(r'^file_name\:(?P<file_name>[0-9a-z\-]+),data\:.+base64\,(?P<data>.+)$')
+            pattern = re.compile(r'^file_name\:(?P<file_name>[0-9a-zA-Z\-]+),data\:.+base64\,(?P<data>.+)$')
             match = pattern.search(data)
-            file_name = match.group('file_name')
+            file_name = match.group('file_name').lower()
             data = match.group('data')
 
             # Try to decode the file. Return validation error if it fails.
