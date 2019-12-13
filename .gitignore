@@ -4,6 +4,10 @@ config/settings/
 # this isn't public
 gunicorn_start
 
+# don't commit sql backups
+*.sql
+*.tar.gz
+
 ### OSX ###
 .DS_Store
 .AppleDouble
