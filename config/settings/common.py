@@ -27,7 +27,6 @@ DJANGO_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
 
     # Useful template tags:
     # 'django.contrib.humanize',
@@ -164,6 +163,9 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 # Your stuff: custom template context processors go here
             ],
+            'libraries': { 
+                'staticfiles' : 'django.templatetags.static',
+            },
         },
     },
 ]

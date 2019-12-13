@@ -17,11 +17,11 @@ urlpatterns = [
     url(settings.ADMIN_URL, admin.site.urls),
 
     # User management
-    url(r'^users/', include('your_snippets.users.urls', namespace='users')),
+    url(r'^users/', include(('your_snippets.users.urls', 'users'), namespace='users')),
     url(r'^accounts/', include('allauth.urls')),
 
     # Your stuff: custom urls includes go here
-    url(r'^api/', include('your_snippets.api.urls', namespace='api')),
+    url(r'^api/', include(('your_snippets.api.urls', 'api'), namespace='api')),
     url(r'^rss/$', RSSFeed()),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

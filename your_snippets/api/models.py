@@ -38,7 +38,7 @@ class Snippet(models.Model):
 
 class SavedImage(models.Model):
     image = models.ImageField(upload_to='images/')
-    snippet = models.ForeignKey(Snippet, related_name='images')
+    snippet = models.ForeignKey(Snippet, related_name='images', on_delete=models.PROTECT)
 
     def __str__(self):
         return self.snippet.title
