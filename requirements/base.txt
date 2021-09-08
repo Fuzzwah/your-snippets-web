@@ -35,5 +35,5 @@ awesome-slugify==1.6.5
 pytz==2019.3
 
 # Your custom requirements go here
-djangorestframework==3.11.0
+djangorestframework==3.11.2
 Markdown==3.1.1
